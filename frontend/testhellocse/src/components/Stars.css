@@ -1,0 +1,10 @@
+ul {
+    padding-left: 0px;
+}
+
+@media screen and (min-width: 900px) {
+    .Destop {
+        width: 90vw;
+        display: flex;
+    }
+}

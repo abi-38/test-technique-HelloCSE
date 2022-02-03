@@ -1,0 +1,38 @@
+img {
+    width: 20vw;
+}
+.PhotoDescription {
+    display: flex;
+}
+
+img {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.Paragraphe {
+    text-align: justify;
+    text-indent: 2em;
+}
+.Margin {
+    display: none;
+}
+
+.Mobile {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+@media screen and (min-width: 900px) {
+    .Destop {
+        width: 90vw;
+    }
+    .Margin {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        display: block;
+    }
+    .Mobile {
+        display: none;
+    }
+}

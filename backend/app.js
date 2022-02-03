@@ -14,11 +14,10 @@ app.use(helmet()); // utilisation de helmet pour la sécurité
 
 // accès cors
 app.use((req, res, next) => {
-    //pas de root rentré puisque ces headers vont s'appliquer à toutes les roots
-    res.setHeader('Access-Control-Allow-Origin', '*');//accès autorisé pour tous’
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-    //ajout des headers mentionnés aux requêtes envoyées vers notre API’
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
     next();
 });
 

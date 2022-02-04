@@ -1,18 +1,25 @@
 img {
-    width: 20vw;
-}
-.PhotoDescription {
-    display: flex;
+    width: 14vw;
 }
 
-img {
-    float: left;
-    margin: 0 20px 20px 0;
+.divImageDesktop {
+    display: flex;
+    background-size: cover;
+    width: 18vw;
+    height: 215px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.PhotoDescription {
+    width: 18vw;
+    height: auto;
 }
 
 .Paragraphe {
     text-align: justify;
     text-indent: 2em;
+    margin-left: 1vw;
 }
 .Margin {
     display: none;
@@ -38,5 +45,12 @@ img {
     .StarCard {
         border-left: 1px solid black;
         margin-left: -1px;
+    }
+    .divImageDesktop {
+        float: left;
+        margin: 0 20px 0px 0;
+    }
+    .Paragraphe {
+        width: 60vw;
     }
 }

@@ -8,7 +8,7 @@ const Button = (props) => {
           onClick={props.onClick}
           disabled={props.disabled}
         >
-          {props.text}
+          {props.text} {props.textBis}
       </button>
     );
 }

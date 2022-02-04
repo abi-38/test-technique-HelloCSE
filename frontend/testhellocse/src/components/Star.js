@@ -11,8 +11,8 @@ const Star = (props) => {
             <p>{star.surname} {star.name}</p>
         </div>
         
-        <div>
-            <div>
+        <div className='CardImage'>
+            <div className='divImageDesktop'>
                 <img className='PhotoDescription' src={star.imageUrl} alt='photoPost' />
             </div>
             <p className='Paragraphe'>

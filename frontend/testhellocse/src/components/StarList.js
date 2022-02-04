@@ -15,7 +15,7 @@ const StarList = (props) => {
     return (
         <>
             <li className={cardShow && "active-li"}>
-                <Button text={star.surname, star.name} className={cardShow && "active-liste"}  onClick={() => handleButton(star.id)}/>
+                <Button text={star.surname} textBis={star.name} className={cardShow && "active-liste"}  onClick={() => handleButton(star.id)}/>
             </li>
             {cardShow && <StarMobile star={star} /> }
         </>

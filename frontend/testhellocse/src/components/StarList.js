@@ -1,6 +1,7 @@
 import StarMobile from './StarMobile';
 import {useState} from 'react';
 import './StarList.css';
+import Button from './Button';
 
 const StarList = (props) => {
     const { star, onClick } = props;
@@ -13,8 +14,8 @@ const StarList = (props) => {
 
     return (
         <>
-            <li>
-                {cardShow ? <button onClick={() => handleButton(star.id)} className="active-liste" >{star.surname} {star.name}</button> : <button onClick={() => handleButton(star.id)} >{star.surname} {star.name}</button>} 
+            <li className={cardShow && "active-li"}>
+                <Button text={star.surname, star.name} className={cardShow && "active-liste"}  onClick={() => handleButton(star.id)}/>
             </li>
             {cardShow && <StarMobile star={star} /> }
         </>

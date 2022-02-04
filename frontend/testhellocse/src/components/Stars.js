@@ -41,12 +41,14 @@ const Stars = () => {
         <div>{error && <div>{error}</div>}
         </div>
         <div className='Destop'>
-            <ul>
-                {stars.map(star => {
-                    return <StarList star={star} key={star.id} onClick={handleButton} />;
-                })}
-            </ul>
-            {star != null && <div> <Star star={star} /></div>}
+            <div>
+                <ul>
+                    {stars.map(star => {
+                        return <StarList star={star} key={star.id} onClick={handleButton} />;
+                    })}
+                </ul>
+            </div>
+            {star != null && <div className='StarCard'> <Star star={star} /></div>}
         </div>
         </>
     )

@@ -15,24 +15,35 @@ li {
 
 li:hover, .active-liste {
     background-color: white;
-    border-radius: 8px 0px 0px 8px;
 }
 
 li:first-child {
-    border-radius: 8px 0px 0px 0px;
     border-bottom: none;
 }
 
 li:last-child {
-    border-radius: 0px 0px 0px 8px;
     border-bottom: 1px solid black;
 }
 
+
+/*Format desktop*/
 @media screen and (min-width: 900px) {
     button {
         width: 20vw;
     }
     li {
         display: flex;
+    }
+    /*li:hover, .active-liste {
+        border-radius: 8px 0px 0px 8px;
+    }*/
+    
+    li:first-child {
+        border-radius: 8px 0px 0px 0px;
+        border-bottom: none;
+    }
+    
+    li:last-child {
+        border-radius: 0px 0px 0px 8px;
     }
 }

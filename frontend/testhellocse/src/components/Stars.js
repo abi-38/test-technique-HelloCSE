@@ -7,11 +7,7 @@ import Star from './Star';
 const Stars = () => {
     const [error, setError] = useState(null);
     const [stars, setStars] = useState([]);
-
-    const [isShow, setIsShow] = useState(true);
     const [star, setStar] = useState(null);
-
-  
 
     useEffect(() => {
         const loadStars = async () => {
@@ -29,60 +25,25 @@ const Stars = () => {
         loadStars();
     }, [])
 
-    const handleToggleButton = async (id) => {
-        console.log(id);
-        setIsShow(prevState => !prevState); // pareil que setIsShow(!isShow) - 
-        console.log(isShow);
-        if (isShow) {
-            //setStar(id);
-            try { 
-                const response =  await GET('/star/' + id);
-                const data = response.data;
-                setStar(data);
-                console.log('Chargement de la Star réussie !');
-                console.log(star);
-            } catch (e) {
-                setError(e); 
-            }
-        } else {
-            setStar(null);
-        }
-    }
-
-    /*
-    const handlerCreateStar = async (formData) => {
-        try {
-            await POST( '/api/post', formData)
-            const response = await GET('/api/post');
+    const handleButton = async (id) => {
+        try { 
+            const response =  await GET('/star/' + id);
             const data = response.data;
-            setPosts(data);
-            console.log('Post bien créé !');
-            
+            setStar(data);
+            console.log('Chargement de la Star réussie !');
         } catch (e) {
-            setError(e.response.data.error);
-        }
-	};
-
-    const handlerDeleteStarButton = async (id) => {
-        try {
-            await DELETE( '/api/post/' + id);
-            setPosts(posts.filter( actualPost => actualPost.id !== id ));
-        } catch (e) {
-            setError(e.response.data.error);
+            setError(e); 
         }
     }
-    */
 
     return (
         <>
-        <div>
-            {error && <div>{error}</div>}
-            
+        <div>{error && <div>{error}</div>}
         </div>
         <div className='Destop'>
             <ul>
                 {stars.map(star => {
-                    return <StarList star={star} key={star.id} onClick={handleToggleButton} />;
+                    return <StarList star={star} key={star.id} onClick={handleButton} />;
                 })}
             </ul>
             {star != null && <div> <Star star={star} /></div>}
@@ -92,4 +53,3 @@ const Stars = () => {
 }
 
 export default Stars;
-//<CreateStar onAddStarHandler={handlerCreateStar}/>

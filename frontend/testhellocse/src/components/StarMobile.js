@@ -1,9 +1,7 @@
-import DayJS from 'react-dayjs';
 import './Star.css';
 
 const StarMobile = (props) => {
     const { star } = props;
-    console.log(star.name);
 
     return (
     <div className='Mobile'>
@@ -23,9 +21,3 @@ const StarMobile = (props) => {
 }
 
 export default StarMobile;
-
-/*
-<div>                    
-    <p>Publié le : </p><DayJS format="DD-MM-YYYY" date={star.createdAt}/>
-</div>
-*/

@@ -1,29 +1,21 @@
 import StarMobile from './StarMobile';
 import {useState} from 'react';
 import './StarList.css';
+import Button from './Button';
 
 const StarList = (props) => {
     const { star, onClick } = props;
-    const [cardShow, setCardShow] = useState(false);
-
-    //const ctx = useContext(AuthContext);
+    const [cardShow, setCardShow] = useState(null);
     
-    /*const handleDelete = (idComment) => {
-        onClick(idComment);     
-    }*/
-
-    //const [isShow, setIsShow] = useState(true);
-    
-    const handleToggleButton = (StarId) => {
+    const handleButton = (StarId) => {
         onClick(StarId); 
-        setCardShow(prevState => !prevState); 
-        console.warn(cardShow);
+        setCardShow(prevState => !prevState);
     }
 
     return (
         <>
-            <li>
-                {cardShow ? <button onClick={() => handleToggleButton(star.id)} className="active-liste" >{star.surname} {star.name}</button> : <button onClick={() => handleToggleButton(star.id)} >{star.surname} {star.name}</button>} 
+            <li className={cardShow && "active-li"}>
+                <Button text={star.surname, star.name} className={cardShow && "active-liste"}  onClick={() => handleButton(star.id)}/>
             </li>
             {cardShow && <StarMobile star={star} /> }
         </>
@@ -31,11 +23,3 @@ const StarList = (props) => {
 
 
 export default StarList;
-
-/*
- <div>
-    {isShow && <Star star={star}/>}
-</div>
-*/
-
-// {((ctx.user && ctx.user.isAdmin) || (ctx.user && ctx.user.id === props.userId)) && <Button text='Supprimer' onClick={() => handleDelete(props.id)} />}

@@ -1,5 +1,8 @@
 ul {
     padding-left: 0px;
+    border: 1px solid black;
+    border-radius: 8px 0px 0px 8px;
+    background-color: rgb(185, 185, 185);
 }
 
 @media screen and (min-width: 900px) {

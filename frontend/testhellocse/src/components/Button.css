@@ -1,0 +1,22 @@
+.Bouton-link {
+    width: 100vw;
+    border-radius: 0px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+}
+
+.active-liste {
+    background-color: white;
+    position: relative;
+    left: 1px;
+    border-right: 1px solid white;
+    font-weight: bold;
+}
+
+/*Format desktop*/
+@media screen and (min-width: 900px) {
+    .Bouton-link {
+        width: 20vw;
+    }
+}
